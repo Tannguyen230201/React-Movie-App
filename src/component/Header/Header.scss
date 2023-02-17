@@ -1,0 +1,105 @@
+.header {
+    background-color: transparent;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    justify-content: space-between;
+    z-index: 40;
+
+    .leftMenu {
+        display: flex;
+
+        .logo {
+            width: 100px;
+            height: 23px;
+            line-height: 60px;
+            margin-left: 30px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            @media screen and (max-width:600px) {
+                margin-left: 20px;
+                width: 70px;
+                height: 20px;
+            }
+        }
+
+        .searchInput {
+            margin: 18px 0 0 16px;
+
+            @media screen and (max-width:600px) {
+                margin: 18px 0 0 0px;
+            }
+
+            .iconSearch {
+                transform: translateX(24px) translateY(-2px);
+                font-size: 18px;
+                color: #fff;
+                cursor: pointer;
+
+            }
+
+            input {
+                opacity: 0;
+                width: 30px;
+                border-radius: 4px;
+                cursor: pointer;
+                color: #fff;
+
+                &:focus {
+                    // background-color: rgba(17,17,17);
+                    background-color: transparent;
+                    color: #ecbaba;
+                    opacity: 1;
+                    width: 240px;
+                    transition: width 0.5s;
+                    padding-left: 30px;
+
+                    @media screen and (max-width:600px) {
+                        width: 214px;
+                    }
+
+                }
+
+            }
+        }
+    }
+
+    .rightMenu {
+        // margin-left: 400px;
+
+        div {
+            line-height: 60px;
+            display: flex;
+            width: 300px;
+            justify-content: space-around;
+            padding-right: 20px;
+
+            a {
+                text-decoration: none;
+                color: #f2dada;
+                transform: scaleX(1);
+                transition: all 0.2s ease;
+                font-weight: 700;
+                font-size: 16px;
+                border-bottom: 0px red solid;
+
+                &:hover {
+                    transform: scaleX(1.1);
+                    color: #fff;
+
+                }
+            }
+
+        }
+
+        @media screen and (max-width:750px ) {
+            display: none;
+        }
+    }
+}

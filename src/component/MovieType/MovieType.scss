@@ -1,0 +1,41 @@
+.movie_Type {
+    background-color: rgb(17, 17, 17);
+    height: 100%;
+
+    .content_Movie_Type {
+        overflow-x: hidden;
+        overflow-y: hidden;
+        max-width: 1250px;
+        height: 100%;
+        padding: 60px 20px;
+        background-color: rgb(17, 17, 17);
+
+        .cards_Movie_Type {
+            transition: all 0.3s linear;
+            position: relative;
+            scroll-behavior: smooth;
+            overflow: hidden;
+            margin-bottom: 20px;
+
+
+            img {
+                transform: scale(1);
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                transition: all 0.4s ease-out;
+
+                &:hover {
+                    transform: scale(1.2);
+                    z-index: 100;
+                    opacity: 1;
+                }
+
+                @media screen and (max-width: 900px) {
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+}
