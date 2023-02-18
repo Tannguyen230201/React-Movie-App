@@ -12,16 +12,25 @@ const style = {
     maxWidth: '1260px',
 }
 const DetailMovies = () => {
-    const [currentMovieDetail, setMovie] = useState()
+    const [currentMovieDetail, setMovie] = useState([])
     const { id } = useParams()
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(true)
         setTimeout(() => {
             fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
                 .then(res => res.json())
-                .then(data => setMovie(data))
-            setLoading(false)
+                .then(data => {
+                    if(data) {
+                        setLoading(false)
+                    }
+                    else {
+                        setLoading(true)
+                    }
+                    return setMovie(data)
+                })
+                
             window.scrollTo(0, 0)
         }, 1000)
     }, [id])
