@@ -13,7 +13,7 @@ import  MovieType from './component/MovieType/MovieType';
 const styleBody = {
   background: 'rgba(17,17,17)',
   width: '100%',
-  heigh: '100%'
+  heigh: '100%',
 }
 
 function App() {
@@ -23,8 +23,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="movie/:id" element={<DetailMovies />} />
-          <Route path="movie/type/:type" element={<MovieType/>} />
-          <Route path="movie/type/:type/:page" element={<MovieType/>}/>
+          <Route path="movie/type/:type" element={<MovieType />} />
+          <Route path="movie/type/:type/:pageList" element={<MovieType/>}/>
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

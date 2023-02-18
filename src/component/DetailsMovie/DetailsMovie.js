@@ -8,7 +8,8 @@ import Content from "../Content/Content"
 import LoadingIcon from "../Loading/Loading"
 
 const style = {
-    maxWidth: '1279px',
+    width:'100%',
+    maxWidth: '1260px',
 }
 const DetailMovies = () => {
     const [currentMovieDetail, setMovie] = useState()

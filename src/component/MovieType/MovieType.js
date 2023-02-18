@@ -7,28 +7,44 @@ const MovieType = () => {
     const { type } = useParams()
     const [movieByTyPe, setMovieByTyPe] = useState([]);
     const [loading1, setLoading1] = useState(true);
+    const [page, setPage] = useState(1);
     useEffect(() => {
+        setLoading1(true)
         setTimeout(() => {
-            fetch(`https://api.themoviedb.org/3/movie/${type}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US&page=9`)
+            fetch(`https://api.themoviedb.org/3/movie/${type}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US&page=${page}`)
                 .then(res => res.json())
-                .then(data => setMovieByTyPe(data.results))
-                setLoading1(false)
+                .then(data => {
+                    if(data?.results) {
+                        setLoading1(false)
+                    }
+                    else {
+                        setLoading1(true)
+                    }
+                    return setMovieByTyPe(data.results)
+                })
             window.scrollTo(0, 0)
         }, 500);
-        
-    }, [type])
+    }, [type, page])
+    useEffect(()=>{
+        setPage(1)
+    },[type])
 
-    return loading1 ? (<LoadingIcon/>) :  (
+    return  loading1 ? (<LoadingIcon/>) :  (
         <div className="movie_Type " >
             <div className="container content_Movie_Type">
+            {
+                type === 'upcoming' ? <h3 style={{color:'#fff',paddingBottom:'20px',fontWeight:'700'}}>Upcomming</h3> :'' ||
+                type === 'top_rated' ? <h3 style={{color:'#fff',paddingBottom:'20px',fontWeight:'700'}}>Top Rated</h3> :'' ||
+                type === 'popular' ? <h3 style={{color:'#fff',paddingBottom:'20px',fontWeight:'700'}}>Popular</h3> :''
+            }
             <div className="row" >
                     {
                         movieByTyPe.map(movie => (
-                            <div className="col-6 col-lg-3 col-md-4 col-sm-6 " >
+                            <div className="col-6 col-lg-3 col-md-4 col-sm-6 " style={{paddingBottom:'20px'}}>
                                 <Link to={`/movie/${movie.id}`} style={{ textDecoration: "none", color: "white" }}>
-                                    <div className="cards_Movie_Type " >
+                                    <div className="cards_Movie_Type ">
                                         {/* <div className="cards__overlay"> */}
-                                        <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="" />
+                                        <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="img" />
                                         {/* <div className="card__title">{movie ? movie.original_title : ""}</div> */}
                                         {/* <div className="card__runtime"> */}
                                         {/* {movie ? movie.release_date : ""} */}
@@ -42,7 +58,7 @@ const MovieType = () => {
                         ))
                     }
                 </div>
-                <Link to="/movie/type/popular/1">NEXT</Link>
+                <Link to={`/movie/type/${type}/${page+1}`} style={{ textDecoration: "none",fontWeight:'700',color:'#fff' }} onClick={() => setPage(page+1)}>LOAD MORE</Link>
             </div>
 
         </div>
