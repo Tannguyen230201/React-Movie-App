@@ -10,6 +10,7 @@ import LoadingIcon from "../Loading/Loading";
 const style = {
   width: "100%",
   maxWidth: "1260px",
+  padding:"0 0 100px 0"
 };
 const DetailMovies = () => {
   const [currentMovieDetail, setMovie] = useState([]);
@@ -103,6 +104,9 @@ const DetailMovies = () => {
           </div>
         </div>
       </div>
+      <div style={style}>
+        <Content id={id} typeName="casts" name="CAST" />
+      </div>
       <div style={{ width: "100%", padding: "0 10px 50px 10px" }}>
         <h1 className="heading">
           VIDEOS
@@ -112,15 +116,15 @@ const DetailMovies = () => {
           class="videos"
           //   width="100%"
           //   height="700px"
-          src={`https://www.youtube.com/embed/${currentMovieDetail.videos.results[0].key}`}
+          src={`https://www.youtube.com/embed/${currentMovieDetail.videos.results[0]?.key}`}
           title="Luther: The Fallen Sun | Official Trailer | Netflix"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
+          allowFullscreen
         ></iframe>
       </div>
       <div style={style}>
-        <Content typeName="popular" name="YOU MAY ALSO LIKE" />
+        <Content id={id} typeName="similar" name="YOU MAY ALSO LIKE" />
       </div>
     </div>
   );

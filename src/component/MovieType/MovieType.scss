@@ -1,43 +1,91 @@
 .movie_Type {
-    background-color: rgb(17, 17, 17);
+  background-color: rgb(17, 17, 17);
+  height: 100%;
+  min-height: 100vh;
+
+  .content_Movie_Type {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    max-width: 1250px;
     height: 100%;
+    padding: 100px 20px 100px 20px;
+    background-color: rgb(17, 17, 17);
 
-    .content_Movie_Type {
-        overflow-x: hidden;
-        overflow-y: hidden;
-        max-width: 1250px;
+    .cards_Movie_Type {
+      transition: all 0.3s linear;
+      position: relative;
+      scroll-behavior: smooth;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+
+      .grap_title {
+        width: 100%;
+        height: 60%;
+        position: absolute;
+        padding-top: 160px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        background-image: linear-gradient(
+            180deg,
+            transparent,
+            rgba(15,15,15,1) 100%,
+            rgb(16, 13, 13),
+            rgb(18, 14, 14)
+        );
+
+        .title{
+            padding-left: 20px;
+            font-weight: 700;
+        }
+        .vote{
+            padding-left: 20px;
+            font-weight: 700;
+        }
+        .date{
+            padding-left: 20px;
+            font-weight: 700;
+        }
+      }
+
+      .ytb {
+        font-size: 60px;
+        color: red;
+        position: absolute;
+        top: 30%;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+
+        .icon_ytb {
+          text-align: center;
+        }
+      }
+
+      img {
+        transform: scale(1);
         height: 100%;
-        padding: 100px 20px 100px 20px;
-        background-color: rgb(17, 17, 17);
+        width: 100%;
+        object-fit: cover;
+        transition: all 0.4s ease-out;
 
-        .cards_Movie_Type {
-            transition: all 0.3s linear;
-            position: relative;
-            scroll-behavior: smooth;
-            overflow: hidden;
-            height: 100%;
-            width: 100%;
-
-            
-
-            img {
-                transform: scale(1);
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-                transition: all 0.4s ease-out;
-
-                &:hover {
-                    transform: scale(1.2);
-                    z-index: 100;
-                    opacity: 1;
-                }
-
-                @media screen and (max-width: 900px) {
-                    width: 100%;
-                }
-            }
+        &:hover {
+          opacity: 1;
         }
 
+        @media screen and (max-width: 900px) {
+          width: 100%;
+        }
+      }
+
+      &:hover .grap_title {
+        bottom: 0;
+        opacity: 1;
+      }
+      &:hover .ytb{
+        opacity: 1;
+      }
     }
+  }
 }

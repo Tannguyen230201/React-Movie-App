@@ -23,6 +23,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path="movie/:id" element={<DetailMovies />} />
+        <Route path="person/:id" element={<DetailMovies />} />
         <Route path="movie/type/:type" element={<MovieType />} />
         <Route path="movie/type/:type/:pageList" element={<MovieType />} />
         <Route path="*" element={<Error />} />

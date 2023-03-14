@@ -3,6 +3,10 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../MovieType/MovieType.scss';
 import LoadingIcon from "../Loading/Loading";
+import {ImYoutube,} from 'react-icons/im'
+import {AiFillStar} from 'react-icons/ai'
+
+
 const MovieType = () => {
     const { type } = useParams()
     const [movieByTyPe, setMovieByTyPe] = useState([]);
@@ -43,15 +47,25 @@ const MovieType = () => {
                             <div className="col-6 col-lg-3 col-md-4 col-sm-6 " style={{paddingBottom:'20px'}}>
                                 <Link to={`/movie/${movie.id}`} style={{ textDecoration: "none", color: "white" }}>
                                     <div className="cards_Movie_Type ">
-                                        {/* <div className="cards__overlay"> */}
                                         <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="img" />
-                                        {/* <div className="card__title">{movie ? movie.original_title : ""}</div> */}
-                                        {/* <div className="card__runtime"> */}
-                                        {/* {movie ? movie.release_date : ""} */}
-                                        {/* <span className="card__rating">{movie ? movie.vote_average : ""}<i className="fas fa-star" /></span> */}
-                                        {/* </div> */}
-                                        {/* <div className="card__description">{movie ? movie.overview.slice(0, 118) + "..." : ""}</div> */}
-                                        {/* </div> */}
+                                        <div className="ytb">
+                                            <ImYoutube className="icon_ytb"  />
+                                        </div>
+                                        <div className="grap_title">
+                                            <div className="vote">
+                                                <span>{movie.vote_average}</span>
+                                                <span><AiFillStar style={{margin:'0px 0px 3px 5px'}}/></span> 
+                                            </div>
+                                            <div className="date">
+                                                <span>{movie.release_date[0]}</span>
+                                                <span>{movie.release_date[1]}</span>
+                                                <span>{movie.release_date[2]}</span>
+                                                <span>{movie.release_date[3]}</span>
+                                            </div>
+                                            <div className="title">
+                                                {movie.original_title}
+                                            </div>
+                                        </div>
                                     </div>
                                 </Link>
                             </div>
