@@ -10,7 +10,7 @@ import LoadingIcon from "../Loading/Loading";
 const style = {
   width: "100%",
   maxWidth: "1260px",
-  padding:"0 0 100px 0"
+  padding:"0 0 40px 0"
 };
 const DetailMovies = () => {
   const [currentMovieDetail, setMovie] = useState([]);
@@ -107,7 +107,7 @@ const DetailMovies = () => {
       <div style={style}>
         <Content link='person' id={id} typeName="casts" name="CAST" />
       </div>
-      <div style={{ width: "100%", padding: "0 10px 50px 10px" }}>
+      <div style={{ width: "100%", padding: "0 0px 50px 0px" }}>
         <h1 className="heading">
           VIDEOS
           <div className="div"></div>

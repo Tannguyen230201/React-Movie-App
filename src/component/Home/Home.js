@@ -5,7 +5,8 @@ import Intro from "../Intro/Intro";
 const Home = () => {
     const style = {
         margin: 'auto',
-        maxWidth: '1279px',
+        maxWidth: '1250px',
+        padding:'0 20px'
     }
     return (
         <Fragment>
