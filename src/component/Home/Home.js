@@ -11,10 +11,10 @@ const Home = () => {
         <Fragment>
             <Intro/>
             <div style={style}>
-                <Content id='' name="POPULAR SERIES" typeName="popular"/>
-                <Content id='' name="TOP RATED SERIES" typeName="upcoming"/>
-                <Content id='' name=" TOP RATED MOVIES" typeName="top_rated"/>
-                <Content id='' name="POPULAR MOVIES" typeName="popular" />
+                <Content link='movie'  id='' name="POPULAR SERIES" typeName="popular"/>
+                <Content link='movie'  id='' name="TOP RATED SERIES" typeName="upcoming"/>
+                <Content link='movie'  id='' name=" TOP RATED MOVIES" typeName="top_rated"/>
+                <Content link='movie'  id='' name="POPULAR MOVIES" typeName="popular" />
             </div>
         </Fragment>
 

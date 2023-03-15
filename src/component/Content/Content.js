@@ -54,15 +54,15 @@ const Content = (props) => {
                 </h1>
                 <div className='movie_slider' style={style} ref={slideRef}>
                     { 
-                        movies.map((movie) => (
-                            
-                            <Link to={`/movie/${movie.id}` } style={{ textDecoration: "none", color: "white" }}>
-                                <div key={movie.id} className="movie_item" ref={movieRef} >
-                                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path ||  movie.profile_path }`} alt="" />
-                                    <div className="movie_name">{movie.original_title ||movie.original_name}</div>
-                                </div>
-                            </Link>
-                        ))
+                            movies.map((movie) => ( 
+                                <Link to={`/${props.link}/${movie.id}` } style={{ textDecoration: "none", color: "white" }}>
+                                    <div key={movie.id} className="movie_item" ref={movieRef} >
+                                        <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path ||  movie.profile_path }`} alt="" />
+                                        <div className="movie_name">{movie.original_title ||movie.original_name}</div>
+                                    </div>
+                                </Link>
+                            ))
+                        
                     }
                 </div>
                 <div className='btnLeft'  onClick={handScrollLeft}>
