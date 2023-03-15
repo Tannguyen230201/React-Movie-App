@@ -21,45 +21,50 @@
 
       .grap_title {
         width: 100%;
-        height: 60%;
+        height: 50%;
         position: absolute;
-        padding-top: 160px;
+        padding-top: 110px;
         opacity: 0;
         transition: all 0.5s ease;
         background-image: linear-gradient(
-            180deg,
-            transparent,
-            rgba(15,15,15,1) 100%,
-            rgb(16, 13, 13),
-            rgb(18, 14, 14)
+          180deg,
+          transparent,
+          rgba(15, 15, 15, 1) 100%,
+          rgb(16, 13, 13),
+          rgb(18, 14, 14)
         );
 
-        .title{
-            padding-left: 20px;
-            font-weight: 700;
+        .title {
+          padding-left: 20px;
+          font-weight: 700;
         }
-        .vote{
-            padding-left: 20px;
-            font-weight: 700;
+        .vote {
+          padding-left: 20px;
+          font-weight: 700;
         }
-        .date{
-            padding-left: 20px;
-            font-weight: 700;
+        .date {
+          padding-left: 20px;
+          font-weight: 700;
         }
       }
 
       .ytb {
         font-size: 60px;
-        color: red;
         position: absolute;
         top: 30%;
         width: 100%;
         text-align: center;
         opacity: 0;
         transition: all 0.3s ease;
-
         .icon_ytb {
           text-align: center;
+          transform: scale(1);
+          color: rgb(233, 164, 35);
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: scale(1.2);
+          }
         }
       }
 
@@ -83,7 +88,7 @@
         bottom: 0;
         opacity: 1;
       }
-      &:hover .ytb{
+      &:hover .ytb {
         opacity: 1;
       }
     }

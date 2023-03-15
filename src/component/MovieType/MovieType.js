@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../MovieType/MovieType.scss';
 import LoadingIcon from "../Loading/Loading";
-import {ImYoutube,} from 'react-icons/im'
+import {BsFillPlayCircleFill} from 'react-icons/bs'
 import {AiFillStar} from 'react-icons/ai'
 
 
@@ -49,7 +49,7 @@ const MovieType = () => {
                                     <div className="cards_Movie_Type ">
                                         <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="img" />
                                         <div className="ytb">
-                                            <ImYoutube className="icon_ytb"  />
+                                            <BsFillPlayCircleFill className="icon_ytb"  />
                                         </div>
                                         <div className="grap_title">
                                             <div className="vote">

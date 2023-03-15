@@ -4,6 +4,7 @@ import '../Loading/Loading.scss'
 const LoadingIcon = () => {
     return (
         <div className='img_loading'>
+            { window.scrollTo(0, 0)}
             <img src={loading} alt="Loading..." /> 
         </div>
     )

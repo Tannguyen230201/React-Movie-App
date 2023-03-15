@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import '../Header/Header.scss'
 import { FiSearch } from 'react-icons/fi';
+import { BiMenu } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 const Header = () => {
     const [scrollY, setScrollY] = useState(0);
@@ -32,6 +33,9 @@ const Header = () => {
                     <Link to='movie/type/top_rated'>Top Rated</Link>
                     <Link to='movie/type/upcoming'>Upcoming</Link>
                 </div>
+            </div>
+            <div className="icon_menu">
+                <BiMenu/>
             </div>
         </div>
     )
