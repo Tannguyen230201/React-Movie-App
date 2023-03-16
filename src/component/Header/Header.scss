@@ -63,6 +63,9 @@
                     @media screen and (max-width:600px) {
                         width: 200px;
                     }
+                    @media screen and (max-width:400px) {
+                        width: 190px;
+                    }
 
                 }
 
@@ -71,7 +74,6 @@
     }
 
     .rightMenu {
-        // margin-left: 400px;
 
         div {
             line-height: 60px;

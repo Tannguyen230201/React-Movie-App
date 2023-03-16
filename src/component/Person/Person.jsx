@@ -43,7 +43,7 @@ const Person = () => {
         </div>
       </div>
       <div className="grap2">
-        <Content link="movie" id="" typeName="popular" name="POPULAR MOVIES" />
+        <Content movie='person' link="movie" id={id} typeName="movie_credits" name="MEDIAS" />
       </div>
     </div>
   );

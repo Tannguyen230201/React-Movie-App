@@ -13,10 +13,10 @@ const Home = () => {
         <Fragment>
             <Intro/>
             <div style={style}>
-                <Content link='movie'  id='' name="POPULAR SERIES" typeName="popular"/>
-                <Content link='movie'  id='' name="TOP RATED SERIES" typeName="upcoming"/>
-                <Content link='movie'  id='' name=" TOP RATED MOVIES" typeName="top_rated"/>
-                <Content link='movie'  id='' name="NOW PLAYING" typeName="now_playing" />
+                <Content movie='movie' link='movie'  id='' name="POPULAR SERIES" typeName="popular"/>
+                <Content movie='movie' link='movie'  id='' name="TOP RATED SERIES" typeName="upcoming"/>
+                <Content movie='movie' link='movie'  id='' name=" TOP RATED MOVIES" typeName="top_rated"/>
+                <Content movie='movie' link='movie'  id='' name="NOW PLAYING" typeName="now_playing" />
             </div>
         </Fragment>
 

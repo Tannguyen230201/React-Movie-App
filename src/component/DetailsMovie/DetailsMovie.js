@@ -105,7 +105,7 @@ const DetailMovies = () => {
         </div>
       </div>
       <div style={style}>
-        <Content link='person' id={id} typeName="casts" name="CAST" />
+        <Content movie='movie' link='person' id={id} typeName="casts" name="CAST" />
       </div>
       <div style={{ width: "100%", padding: "0 0px 50px 0px" }}>
         <h1 className="heading">
@@ -124,7 +124,7 @@ const DetailMovies = () => {
         ></iframe>
       </div>
       <div style={style}>
-        <Content link='movie' id={id} typeName="similar" name="YOU MAY ALSO LIKE" />
+        <Content movie='movie' link='movie' id={id} typeName="similar" name="YOU MAY ALSO LIKE" />
       </div>
     </div>
   );

@@ -37,12 +37,13 @@ const Content = (props) => {
             // 'https://api.themoviedb.org/3/person/3131?api_key=e9e9d8da18ae29fc430845952232787c&language=en-US'
             // 'https://api.themoviedb.org/3/movie/315162/casts?api_key=e9e9d8da18ae29fc430845952232787c'
             // 'https://api.themoviedb.org/3/movie/297762/similar?api_key=e9e9d8da18ae29fc430845952232787c&language=en-US&page=1'
-            fetch(`https://api.themoviedb.org/3/movie/${props.id}/${props.typeName}?api_key=ae223abf79fccfa16e538b2017ffdfd0&language=en-US&page=1`)
+            // 'https://api.themoviedb.org/3/person/32/movie_credits?api_key=e9e9d8da18ae29fc430845952232787c'
+            fetch(`https://api.themoviedb.org/3/${props.movie}/${props.id}/${props.typeName}?api_key=ae223abf79fccfa16e538b2017ffdfd0&language=en-US&page=1`)
                 .then(res => res.json())
                 .then(res => setMovies(res.results || res.cast))
             setLoading(false);
         }, 2000);
-    }, [props.typeName,props.id])
+    }, [props.typeName,props.id,props.movie])
     const style = {
         gridTemplateColumns: `repeat(${movies.length},170px)`,
     }
