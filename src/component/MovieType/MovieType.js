@@ -53,17 +53,14 @@ const MovieType = () => {
                                         </div>
                                         <div className="grap_title">
                                             <div className="vote">
-                                                <span>{movie.vote_average}</span>
+                                                <span>{movie?.vote_average}</span>
                                                 <span><AiFillStar style={{margin:'0px 0px 3px 5px'}}/></span> 
                                             </div>
                                             <div className="date">
-                                                <span>{movie.release_date[0]}</span>
-                                                <span>{movie.release_date[1]}</span>
-                                                <span>{movie.release_date[2]}</span>
-                                                <span>{movie.release_date[3]}</span>
+                                                <span>{movie.release_date}</span>
                                             </div>
                                             <div className="title">
-                                                {movie.original_title}
+                                                {movie?.original_title}
                                             </div>
                                         </div>
                                     </div>
