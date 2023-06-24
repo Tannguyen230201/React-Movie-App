@@ -77,6 +77,7 @@
 .movie__detailRightBottom {
     margin: 2rem 0;
     flex: 0.8;
+    text-align: justify;
 }
 
 .synopsisText {

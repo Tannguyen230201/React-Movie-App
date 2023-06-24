@@ -100,7 +100,7 @@ const DetailMovies = () => {
           </div>
           <div className="movie__detailRightBottom">
             <div className="synopsisText">Synopsis</div>
-            <div>{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
+            <div style={{textAlign:'justify',width:'100%'}}>{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
           </div>
         </div>
       </div>

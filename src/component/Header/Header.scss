@@ -7,6 +7,9 @@
     top: 0;
     justify-content: space-between;
     z-index: 40;
+    @media screen and (max-width: 600px){
+        background-color: rgb(17,17,17);
+    }
 
     .leftMenu {
         display: flex;
@@ -16,7 +19,7 @@
             height: 23px;
             line-height: 60px;
             margin-left: 30px;
-
+            
             img {
                 width: 100%;
                 height: 100%;
@@ -111,10 +114,37 @@
             font-size: 70px;
             color: white;
             padding-right: 20px;
+            position: relative;
         }
 
         @media screen and (max-width:750px ) {
             display: block;
+        }
+
+        ul{
+            position: fixed;
+            width: 50%;
+            top:0;
+            left: 0;
+            height: 100%;
+            list-style: none;
+            text-decoration: none;
+            transition: all 0.5s ease-in-out;
+            background-color:rgba(0,0,0,0.9);
+            padding-top: 50px;
+            li{
+                text-align: left;
+                
+                margin-bottom: 20px;
+                border-bottom: 1px solid rgb(66, 61, 61);
+                .link{
+                    color: white;
+                    font-weight: 700;
+                    text-decoration:none;
+                }
+            }
+            
+        
         }
     }
 }
